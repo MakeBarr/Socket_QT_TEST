@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TripPlanner</class>
+ <widget class="QDialog" name="TripPlanner">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>849</width>
+    <height>465</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Trip Planner</string>
+  </property>
+  <layout class="QGridLayout">
+   <item row="0" column="1" rowspan="5">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Close</set>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <layout class="QHBoxLayout">
+     <item>
+      <widget class="QLabel" name="statusLabel">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Ready</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="minimumSize">
+      <size>
+       <width>619</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="columnCount">
+      <number>6</number>
+     </property>
+     <column>
+      <property name="text">
+       <string>Time</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Data1</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Data2</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Data3</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Changes</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Type</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QGroupBox" name="tripInfoGroupBox">
+     <property name="title">
+      <string>Information</string>
+     </property>
+     <layout class="QGridLayout">
+      <item row="5" column="0">
+       <widget class="QLabel" name="timeLabel">
+        <property name="text">
+         <string>Signal Events AT</string>
+        </property>
+        <property name="buddy">
+         <cstring>timeEdit</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QDateTimeEdit" name="dateEdit">
+        <property name="displayFormat">
+         <string>yyyy-MM-dd</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1">
+       <widget class="QDateTimeEdit" name="timeEdit">
+        <property name="displayFormat">
+         <string>hh:mm:ss</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="dateLabel">
+        <property name="text">
+         <string>&amp;Date:</string>
+        </property>
+        <property name="buddy">
+         <cstring>dateEdit</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="toLabel">
+        <property name="text">
+         <string>Channel</string>
+        </property>
+        <property name="buddy">
+         <cstring>toComboBox</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="0" colspan="2">
+       <layout class="QHBoxLayout">
+        <item>
+         <widget class="QRadioButton" name="departureRadioButton">
+          <property name="text">
+           <string>READ</string>
+          </property>
+          <property name="shortcut">
+           <string>Alt+E</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="arrivalRadioButton">
+          <property name="text">
+           <string>&amp;WRITE</string>
+          </property>
+          <property name="shortcut">
+           <string>Alt+A</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="fromComboBox">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <item>
+         <property name="text">
+          <string>start_measure</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>set_range</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>stop_measure</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>get_status</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>get_result</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>new1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>new2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>new3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string/>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="toComboBox">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <item>
+         <property name="text">
+          <string>channel0</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel3</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel4</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel5</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel6</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel7</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel8</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel9</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel10</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel11</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel12</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel13</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel14</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>channel15</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="fromLabel">
+        <property name="text">
+         <string>Signal Set</string>
+        </property>
+        <property name="buddy">
+         <cstring>fromComboBox</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QComboBox" name="rangecomboBox">
+        <item>
+         <property name="text">
+          <string>range0</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>range1</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>range2</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>range3</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Range</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
+
